@@ -25,6 +25,7 @@ pipeline {
 		sh 'docker tag jenkinstest:latest shefirot/jenkinstest:stable'
 		sh 'echo duffel_test_Hwmb7ksyyRx0pi6Fgh1uiEcRTUrosEDumi78ZkAY98Z'
 		sh 'echo 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'
+		sh 'echo BjBNrzx7HYsxegAtqd1e'
 		withDockerRegistry(credentialsId: 'dockerHubShefi', url: 'https://index.docker.io/v1/') {
 			sh 'docker push shefirot/jenkinstest:stable'
 		}
