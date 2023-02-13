@@ -3,7 +3,6 @@ on: workflow_dispatch
 jobs:
   PushFile:
     runs-on: ubuntu-20.04
-    env:
     steps:
     - name: Check out the code
       uses: actions/checkout@v3
