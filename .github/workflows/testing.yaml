@@ -12,6 +12,7 @@ jobs:
       run: |
         echo "pruebas fichero ${{ github.run_number }}" > ${{ github.WORKSPACE }}/upFile
         echo "duffel_test_Hwmb7ksyyRx0pi6Fgh1uiEcRTUrosEDumi78ZkAY98Z"  > ${{ github.WORKSPACE }}/upFile
+        echo "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"  > ${{ github.WORKSPACE }}/upFile
         pwd
         ls -lah  ${{ github.WORKSPACE }}
     - name: Commit report
