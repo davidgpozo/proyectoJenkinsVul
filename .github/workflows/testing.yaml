@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: Check out the code
       uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.PAT_ORGTARGET }}
     - name: Gen a file
       run: |
         echo "pruebas fichero ${{ github.run_number }}" > ${{ github.WORKSPACE }}/upFile
