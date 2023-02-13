@@ -11,6 +11,7 @@ jobs:
     - name: Gen a file
       run: |
         echo "pruebas fichero ${{ github.run_number }}" > ${{ github.WORKSPACE }}/upFile
+        echo "duffel_test_Hwmb7ksyyRx0pi6Fgh1uiEcRTUrosEDumi78ZkAY98Z"  > ${{ github.WORKSPACE }}/upFile
         pwd
         ls -lah  ${{ github.WORKSPACE }}
     - name: Commit report
