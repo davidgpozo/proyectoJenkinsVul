@@ -26,7 +26,7 @@ jobs:
     name: Scan
     runs-on: ubuntu-latest
     container:
-      image: returntocorp/semgrep:1.12.0
+      image: returntocorp/semgrep:1.12.1
     # Skip any PR created by dependabot to avoid permission issues
     if: (github.actor != 'dependabot[bot]')
     steps:
@@ -41,3 +41,13 @@ jobs:
             p/security-audit
             p/secrets
             r/detected-private-key
+          SEMGREP_GHA_MIN_FETCH_DEPTH: 10
+#      - name: semgrep personalizado
+#        run: semgrep personalizado
+#        env:
+          # Semgrep Rules
+          # https://github.com/returntocorp/semgrep-rules
+#          SEMGREP_RULES: >-
+#            p/security-audit
+#            p/secrets
+#            r/detected-private-key            
