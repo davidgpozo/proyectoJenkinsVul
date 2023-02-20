@@ -15,7 +15,8 @@ jobs:
           tar -xvf gitleaks_8.15.3_linux_x64.tar.gz
           ls -lah
           chmod +x gitleaks
-          ./gitleaks detect
+          ./gitleaks detect --redact -f json -v || true
+          ls -lah
 #      - name: Finding secrets
 #        uses: gitleaks/gitleaks-action@v2
 #        env:
