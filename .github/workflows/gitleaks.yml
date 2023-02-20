@@ -18,7 +18,6 @@ jobs:
           chmod +x gitleaks
           ./gitleaks detect --redact -f json -v -r ${{ github.WORKSPACE }}/reporteGitLeaks || true
           ls -lah
-          cat texto
       - name: Commit report
         run: |
           cd ${{ github.WORKSPACE }}
