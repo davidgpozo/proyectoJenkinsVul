@@ -11,13 +11,21 @@ jobs:
           fetch-depth: 0
       - name: try from source
         run: |
+          cd ${{ github.WORKSPACE }}
           wget https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_x64.tar.gz
           tar -xvf gitleaks_8.15.3_linux_x64.tar.gz
           ls -lah
           chmod +x gitleaks
-          ./gitleaks detect --redact -f json -v -r ./texto || true
+          ./gitleaks detect --redact -f json -v -r ${{ github.WORKSPACE }}/reporteGitLeaks || true
           ls -lah
           cat texto
+      - name: Commit report
+        run: |
+          cd ${{ github.WORKSPACE }}
+          git config --global user.name ${{ github.actor }}
+          git add -f ${{ github.WORKSPACE }}/reporteGitLeaks
+          git commit -m "Autometed push gitLeaks report"
+          git push          
 #      - name: Finding secrets
 #        uses: gitleaks/gitleaks-action@v2
 #        env:
