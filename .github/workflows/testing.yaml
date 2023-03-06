@@ -7,10 +7,12 @@ jobs:
     name: A job to say que paxa
     steps:
       - uses: actions/checkout@v3
-      - id: buenas
+      - name: A ver si chuta 
+        id: buenas
         uses: davidgpozo/testing@v1
         with:
           who-to-greet: 'Desde el olivar de Badajoz'
-      - run: echo random-number ${{ steps.buenas.outputs.random-number }}
+      - name: El numero de la loteria
+        run: echo random-number ${{ steps.buenas.outputs.random-number }}
         shell: bash
 
