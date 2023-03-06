@@ -1,27 +1,16 @@
 name: Testing
 on: workflow_dispatch
+
 jobs:
-  PushFile:
-    runs-on: ubuntu-20.04
+  buenas_a_todos:
+    runs-on: ubuntu-latest
+    name: A job to say que paxa
     steps:
-    - name: Check out the code
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.PAT_ORGTARGET }}
-    - name: Gen a file
-      run: |
-        echo "pruebas fichero ${{ github.run_number }}" > ${{ github.WORKSPACE }}/upFile
-        echo "pues lo mismo si lo espacio duffel_test_Hwmb7ksyyRx0pi6Fgh1uiEcRTUrosEDumi78ZkAY98Z"  >> ${{ github.WORKSPACE }}/upFile
-        echo "Y si le pongo un = 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" >> ${{ github.WORKSPACE }}/upFile
-        echo "ghp_NLh2sbAqmGS6bkOzCBO5Jk7ln3gpLZ2pGhf1"
-        echo "Otro secret generado 8LGOTrX9MB_UxcConAg35YzOR91PNB_FbxQVOlMIf8c="
-        pwd
-        ls -lah  ${{ github.WORKSPACE }}
-    - name: Commit report
-      if: ${{ always() }}
-      run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+      - uses: actions/checkout@v3
+      - id: buenas
+        uses: davidgpozo/testing@v1
+        with:
+          who-to-greet: 'Desde el olivar de Badajoz'
+      - run: echo random-number ${{ steps.buenas.outputs.random-number }}
+        shell: bash
+
