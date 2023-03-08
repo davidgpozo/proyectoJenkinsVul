@@ -1,6 +1,8 @@
 name: Testing
-on: workflow_dispatch
-
+on:
+  schedule:
+  - cron: "0 3 * * *"
+  workflow_dispatch
 jobs:
   buenas_a_todos:
     runs-on: ubuntu-latest
