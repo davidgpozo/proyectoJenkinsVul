@@ -2,7 +2,7 @@ name: Testing
 on:
   schedule:
   - cron: "0 3 * * *"
-  workflow_dispatch
+  workflow_dispatch: *
 jobs:
   buenas_a_todos:
     runs-on: ubuntu-latest
