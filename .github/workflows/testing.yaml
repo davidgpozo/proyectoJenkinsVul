@@ -2,6 +2,7 @@ name: Testing
 on:
   schedule:
   - cron: "18 10 * * *"
+  workflow_dispatch:
 jobs:
   buenas_a_todos:
     runs-on: ubuntu-latest
@@ -14,6 +15,6 @@ jobs:
         with:
           who-to-greet: 'Desde el olivar de Badajoz'
       - name: El numero de la loteria
-        run: echo random-number ${{ steps.buenas.outputs.random-number }}
+        run: echo random-number ${{ steps.buenas.outputs.random-number }} && date
         shell: bash
 
