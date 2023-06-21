@@ -7,9 +7,11 @@ on:
       number:
         description: "El numero secreto de tu tarjeta de credito"
         required: true
+        default: "343948"
       who-to-greet:
         description: "A quien saludar"
         required: true
+        default: "pepe"
 jobs:
   buenas_a_todos:
     runs-on: ubuntu-latest
@@ -18,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: A ver si chuta 
         id: buenas
-        uses: davidgpozo/testing/pruebas/de/concepto/2022.yml@main
+        uses: 'davidgpozo/testing/pruebas/de/concepto/2022.yml@main'
         with:
           who-to-greet: 'Desde el olivar de Badajoz'
       - name: El numero de la loteria
