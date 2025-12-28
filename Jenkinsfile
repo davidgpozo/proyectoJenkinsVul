@@ -27,6 +27,8 @@ pipeline {
 		sh 'echo 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'
 		sh 'echo BjBNrzx7HYsxegAtqd1e'
 		sh 'echo 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m'
+		sh 'export aws_access_key_id=ASIAIOSFODNN7EXAMPLE'
+        sh 'export aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
 		withDockerRegistry(credentialsId: 'dockerHubShefi', url: 'https://index.docker.io/v1/') {
 			sh 'docker push shefirot/jenkinstest:stable'
 		}
